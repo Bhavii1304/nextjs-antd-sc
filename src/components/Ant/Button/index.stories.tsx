@@ -1,41 +1,41 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from ".";
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from './index'
 
 const meta: Meta<typeof Button> = {
-  title: "Ant Design/Button",
-  tags: ["autodocs"],
+  title: 'Ant Design/Button',
+  tags: ['autodocs'],
   parameters: {
-    layout: "centered",
+    layout: 'centered'
   },
   argTypes: {
     type: {
-      control: "radio",
-      options: ["primary", "dashed", "link", "text", "default"],
+      control: 'radio',
+      options: ['primary', 'dashed', 'link', 'text', 'default']
     },
-    size: { control: "radio", options: ["small", "medium", "large"] },
-    disabled: { control: "boolean" },
-    loading: { control: "boolean" },
-    danger: { control: "boolean" },
-    ghost: { control: "boolean" },
-    block: { control: "boolean" },
-    icon: { control: HTMLElement },
+    size: { control: 'radio', options: ['small', 'medium', 'large'] },
+    disabled: { control: 'boolean' },
+    loading: { control: 'boolean' },
+    danger: { control: 'boolean' },
+    ghost: { control: 'boolean' },
+    block: { control: 'boolean' },
+    icon: { control: HTMLElement }
   },
-  component: Button,
-};
+  component: Button
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Button>
 
 export const Demo: Story = {
   args: {
-    children: "Button",
-    type: "primary",
-    size: "large",
+    children: 'Button',
+    type: 'primary',
+    size: 'large',
     disabled: false,
     loading: false,
     danger: false,
     ghost: false,
-    block: false,
-  },
-};
+    block: false
+  }
+}

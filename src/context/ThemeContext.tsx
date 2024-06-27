@@ -18,7 +18,7 @@ type ThemeContextType = [
   keyof typeof themes,
   Dispatch<SetStateAction<keyof typeof themes>>
 ]
-const ThemeContext = createContext<ThemeContextType | null>(null)
+export const ThemeContext = createContext<ThemeContextType | null>(null)
 
 export function ThemeProvider({ children }: PropsWithChildren) {
   const [themeColor, setThemeColor] = useState<keyof typeof themes>(() => {

@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { addons } from '@storybook/preview-api'
+import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode'
+import { ThemeProvider, useTheme } from '../src/context/ThemeContext'
 import GlobalStyle from '../src/config/global.style'
-import { ThemeProvider } from '../src/context/ThemeContext'
 
-const withTheme = (StoryFn: any) => {
+const channel = addons.getChannel()
+
+function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {
+  const [, setDark] = useTheme()
+  const handleColorScheme = (value: boolean) =>
+    setDark(value ? 'dark' : 'default')
+
+  useEffect(() => {
+    channel.on(DARK_MODE_EVENT_NAME, handleColorScheme)
+    return () => channel.off(DARK_MODE_EVENT_NAME, handleColorScheme)
+  }, [channel])
+
   return (
-    <ThemeProvider>
-      <StoryFn />
+    <>
       <GlobalStyle />
-    </ThemeProvider>
+      {children}
+    </>
   )
-} // export all decorators that should be globally applied in an array export const decorators = [withTheme];
+}
 
-export const decorators = [withTheme]
+export const decorators = [
+  (renderStory: any) => (
+    <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>
+  ),
+  (renderStory: any) => <ThemeProvider>{renderStory()}</ThemeProvider>
+]

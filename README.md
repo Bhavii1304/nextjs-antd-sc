@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Js Boilerplate
 
-## Getting Started
+This boilerplate is starting point of any project with all batteries included. you can directly start development without spending time on project setup.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Client:** [NextJs] (https://nextjs.org/), typescript
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Styling:** [Antd](https://ant.design/), [Storybook](https://storybook.js.org/), Styled Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Code Formatter:** [Prettier](https://prettier.io/), [Eslint](https://eslint.org/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Developer Guide
 
-## Learn More
+1. This boilerplate has been setup with three layouts,
+   i) Base layout for all pages in app
+   ii) Auth layout for authentication pages i.e. login, signup in (auth)
+   iii) Dashboard Layout for admin pages with header, sidebar and content in (dashboard)
 
-To learn more about Next.js, take a look at the following resources:
+2. You can modify the ant design tokens in themeVariable.ts file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. You can add color variables in variable.ts file as per according to your project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. For theming we have added two themes i.e. default and dark.
 
-## Deploy on Vercel
+5. Prior to committing, ensure you verify and resolve linting issues by running the following commands:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   - `npm run lint`
+   - `npm run lint:fix`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+6. Add comments when necessary for better understanding, and make further improvements as needed.
+
+7. Customize the ESLint rules in the .eslintrc.json file to meet your project's specific requirements.
+
+### Other useful scripts
+
+- `npm run build` to build a project
+- `npm run dev` to run (dev) a project
+- `npm run build` to build a project
+- `npm run preview` to run preview a project
+- `npm run lint` to lint a project
+- `npm run lint:fix` to lint:fix a project
+- `npm run format` to format a project
+- `npm run storybook` to start storybook dev server
+- `npm run build-storybook` to build storybook

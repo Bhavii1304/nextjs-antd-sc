@@ -1,4 +1,5 @@
 'use client'
+import Images from '@/config/images'
 import styled from 'styled-components'
 
 export const AuthWrapper = styled.div`
@@ -6,7 +7,7 @@ export const AuthWrapper = styled.div`
   display: flex;
 `
 export const AuthBanner = styled.div`
-  background: url('../../assets/Images/bakery.jpg') no-repeat;
+  background: url(${Images.Bakery.src}) no-repeat;
   flex: 0 0 600px;
   background-size: cover;
 `
