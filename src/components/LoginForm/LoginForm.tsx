@@ -16,7 +16,6 @@ function LoginForm() {
       >
         <Input />
       </Form.Item>
-
       <Form.Item<FieldType>
         label="Password"
         name="password"
@@ -24,7 +23,6 @@ function LoginForm() {
       >
         <Input.Password />
       </Form.Item>
-
       <Form.Item>
         <Button type="primary" htmlType="submit">
           Submit
